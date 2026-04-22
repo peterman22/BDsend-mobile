@@ -34,7 +34,7 @@ export default function KycScreen() {
 
   const mutation = useMutation({
     mutationFn: () => userApi.submitKyc({ idType, idNumber }),
-    onSuccess: () => Alert.alert('Submitted', 'Your KYC is under review. We'll notify you once it's processed.', [{ text: 'OK', onPress: () => router.back() }]),
+    onSuccess: () => Alert.alert('Submitted', "Your KYC is under review. We'll notify you once it's processed.", [{ text: 'OK', onPress: () => router.back() }]),
     onError: (e: any) => Alert.alert('Error', e.response?.data?.message ?? 'Submission failed.'),
   });
 
